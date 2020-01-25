@@ -1,7 +1,88 @@
 .header {
-    background-image: url("https://images.unsplash.com/photo-1549490349-8643362247b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
-    height: 300px;
+    height: 400px;
+}
 
-    /*Create parallax scrolling effect*/
-    background: ; 
+#title {
+    font-family: 'Lora', serif;
+    text-transform: uppercase;
+    font-size: 60px;
+    font-weight: 400; 
+}
+
+/*Setting grid parameters*/
+.outer-grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas:
+        "nav header"
+        "nav content"
+        "nav footer";
+    grid-template-rows: 3fr 90% 1fr;
+    grid-template-columns: 20% 1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    margin: 0;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-head {
+    grid-area: header;
+}
+
+.main-nav {
+    grid-area: nav;  
+}
+
+.main-content {
+    grid-area: content;
+}
+
+
+.main-footer {
+    grid-area: footer;
+}
+
+
+/*Formatting Main Content*/
+
+.performances {
+    display: flex;
+}
+
+.interviews {
+    display: flex;
+}
+
+
+
+/* Media Queries */
+
+
+
+@media (max-width: 700px) {
+    .outer-grid {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-areas:
+            "header"
+            "nav"
+            "content"
+            "footer";
+        grid-template-rows: 3fr 90% 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-row-gap: 10px;
+        grid-column-gap: 10px;
+        margin: 0;
+    }
+}   
+
+
+/* Formatting for TESTING - DELETE*/
+
+header, nav, main, footer {
+    background: yellowgreen;
 }
